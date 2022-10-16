@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$dark-blue: rgb(46, 64, 91);
+$black:black;
+$whiteSmoke: whiteSmoke;
+$gray: gray;
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}
+ 
+.left {
+    width: 30rem;
+}
+ 
+.button {
+    width: 25rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: $black;
+    color: $whiteSmoke;
+    border: $black;
+    font-family: "Roboto";
+}
+ 
+.input {
+    width: 25rem;
+    height: 2rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid $gray;
+    margin: 5px 0;
+}
+ 
+.saveBtn {
+    width: 25rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: $dark-blue;
+    color: $whiteSmoke;
+    border: $dark-blue;
+    font-family: "Roboto";
+}
+ 
+.ReactQuill{
+    width: 25rem;
+}
+ 
+.notesInner{
+    margin-top: 0.5rem;
+    border: 1px solid $dark-blue;
+    border-radius: 10px;
+    width: 25rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Roboto";
+  
+}
+ 
+.notesInner:hover{
+    background-color: rgb(46, 64, 91);
+    color: $whiteSmoke;
+    
+}
+ 
+.editBtn, .deleteBtn{
+    width: 5rem;
+    height: 2rem;
+    background-color: rgb(46, 64, 91);
+    color: $whiteSmoke;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 10px 10px 0;
+    
+    
+}
+
+.postcard{
+    
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    text-align: center;
+      
+}
+
+.postcardText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
