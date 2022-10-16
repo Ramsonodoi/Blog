@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 import { collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 import { database } from '../../firebaseConfig'
 // import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
+// import 'react-quill/dist/quill.snow.css'
 import dynamic from 'next/dynamic'
-import Test from './Editor'
-import Editor from './Editor'
+// import Test from './Editor'
+
 
 
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
@@ -93,6 +93,7 @@ export default function NoteDetails({ ID }) {
                       value={noteTitle}
                   />
                   <div className={styles.ReactQuill}>
+                     
                       <ReactQuill
                           onChange={setNoteDescription}
                           value={noteDescription}

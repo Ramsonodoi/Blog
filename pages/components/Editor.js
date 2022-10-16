@@ -36,11 +36,6 @@ export default function Editor() {
         onChange={addDescription}
         value={noteDescription}
       />
-      <div>
-      {/* <button onClick={saveNote} className={styles.saveBtn}>
-          Save Post
-        </button> */}
-      </div>
     </div>
   );
 }
