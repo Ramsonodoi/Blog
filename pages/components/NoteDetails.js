@@ -128,6 +128,19 @@ export default function NoteDetails({ ID }) {
           )}
           <h2 className={styles.postcardText} >{singleNote.noteTitle}</h2>
           <div className={styles.postcard} dangerouslySetInnerHTML={{ __html: singleNote.noteDescription }}></div>
+          <div className={styles.comment} >
+            <h3>Leave a Comment</h3>
+            <form>
+                <label className= {styles.name}>Your Name</label>
+                <input className={styles.nameinput} />
+
+                <label className={styles.email} >Your email</label>
+                <input className={styles.emailinput} />
+                <label className= {styles.text}>Your message</label>
+                <textarea rows="10" tabIndex="4" className={styles.commentsection} ></textarea>
+            </form>
+            <button className={styles.commentBtn} >Submit Comment</button>
+          </div>
       </>
   )
 }

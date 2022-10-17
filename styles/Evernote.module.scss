@@ -81,12 +81,22 @@ $gray: gray;
     
 }
 
+.commentBtn{
+width: 9rem;
+height: 2rem;
+background-color: rgb(46, 64, 91);
+color: $whiteSmoke;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 10px 10px 10px 0;
+}
 .postcard{
     
     display: flex;
     flex-direction: column;
-    height: 30rem;
-    width: clamp(64rem, calc(20rem + 2vw), 22rem);
+    height: 20rem;
+    width: clamp(60rem, calc(20rem + 2vw), 22rem);
     overflow: hidden;
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
     border-radius: 1em;
@@ -111,3 +121,12 @@ $gray: gray;
     min-height: 100px;
   }
   
+  .comment {
+    margin-top: 40px;
+  }
+
+  .email, .text, .commentsection, .nameinput, .emailinput {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
