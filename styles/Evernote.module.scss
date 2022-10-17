@@ -8,8 +8,9 @@ $gray: gray;
 
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content:left;
+    // align-items: center;
+    // justify-content: center;
     background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
 }
  
@@ -84,8 +85,8 @@ $gray: gray;
     
     display: flex;
     flex-direction: column;
-    height: 10rem;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    height: 30rem;
+    width: clamp(64rem, calc(20rem + 2vw), 22rem);
     overflow: hidden;
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
     border-radius: 1em;
@@ -101,3 +102,12 @@ $gray: gray;
     justify-content: center;
     flex-direction: column;
 }
+
+.texteditor {
+    width: 1086px;
+    margin: 0 auto;
+  }
+  .ql-editor {
+    min-height: 100px;
+  }
+  
