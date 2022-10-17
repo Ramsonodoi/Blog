@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/Evernote.module.scss";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { database } from "../../firebaseConfig";
-import Editor from "./Editor";
+// import  {modules, formats} from "./EditorToolbar";
 // import ReactQuill from 'react-quill'
-// import 'react-quill/dist/quill.snow.css';
+import 'react-quill/dist/quill.snow.css';
 import dynamic from "next/dynamic";
 
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
+const EditorToolbar = dynamic(import("./EditorToolbar"), {ssr: false})
+// const modules = dynamic(import("./EditorToolbar"),{ssr: false} )
+// const formats = dynamic(import("./EditorToolbar"),{ ssr: false})
 
 const dbInstance = collection(database, "blogposts");
 
@@ -47,6 +50,20 @@ export default function NoteOperation({ getSingleNote }) {
     });
   };
 
+  const modules = {
+    toolbar: {
+      container: "#toolbar",
+      // handlers: {
+      //   'bold': customBoldHandler
+      // }
+    },
+    history: {
+      delay: 500,
+      maxStack: 100,
+      userOnly: true
+    }
+  };
+
   useEffect(() => {
     getNotes();
   }, []);
@@ -68,11 +85,14 @@ export default function NoteOperation({ getSingleNote }) {
         />
 
          <div className={styles.ReactQuill} >  
+         <EditorToolbar/>
          <ReactQuill
         theme="snow"
         placeholder="Write Post"
         onChange={addDescription}
         value={noteDescription}
+        modules={modules}
+        // formats={formats}
       />
                 </div>  
         <div></div>

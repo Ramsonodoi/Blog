@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic'
 
 
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
+const EditorToolbar = dynamic(import("./EditorToolbar"), {ssr: false})
 
 const dbInstance = collection(database, 'blogposts')
 
@@ -41,6 +42,20 @@ export default function NoteDetails({ ID }) {
       setNoteTitle(singleNote.noteTitle);
       setNoteDescription(singleNote.noteDescription)
   }
+
+  const modules = {
+    toolbar: {
+      container: "#toolbar",
+      // handlers: {
+      //   'bold': customBoldHandler
+      // }
+    },
+    history: {
+      delay: 500,
+      maxStack: 100,
+      userOnly: true
+    }
+  };
 
   useEffect(() => {
       getNotes();
@@ -93,10 +108,13 @@ export default function NoteDetails({ ID }) {
                       value={noteTitle}
                   />
                   <div className={styles.ReactQuill}>
-                     
+                     <EditorToolbar/>
                       <ReactQuill
                           onChange={setNoteDescription}
                           value={noteDescription}
+                          modules={modules}
+                          placeholder="Edit Post"
+                          theme='snow'
                       />
                   </div>
                   <button
